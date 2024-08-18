@@ -1,23 +1,24 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import * as ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
-import Error from './components/error';
 import Header from './components/header';
 import Footer from './components/footer';
+import './styles/index.scss';
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <Router>
+      <div className='content'>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
-  );
-};
-
-export default App;
+    </Router>
+  </React.StrictMode>,
+)

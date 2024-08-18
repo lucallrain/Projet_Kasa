@@ -1,12 +1,12 @@
-import React from 'react';
+import { useLocation } from 'react-router-dom'
+import Banner from '../components/banner'
+import Card from '../components/card'
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Welcome to Home Page</h1>
-      {/* Autres contenus */}
-    </div>
-  );
-};
-
-export default Home;
+export default function Home() {
+    return (
+        <div>
+            <h1>MAISON</h1>
+            {/* Contenu supplémentaire */}
+        </div>
+    );
+}

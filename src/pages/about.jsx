@@ -1,12 +1,12 @@
-import React from 'react';
+import { useLocation } from 'react-router-dom'
+import Banner from '../components/banner'
+import Card from '../components/card'
 
-const About = () => {
-  return (
-    <div>
-      <h1>About Us</h1>
-      {/* Ajoutez le contenu spécifique de votre page "About" ici */}
-    </div>
-  );
-};
-
-export default About;
+export default function About() {
+    return (
+        <div>
+            <h1> A PROPOS </h1>
+            {/* Contenu supplémentaire */}
+        </div>
+    );
+}
