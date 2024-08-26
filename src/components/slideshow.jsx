@@ -19,8 +19,8 @@ export default function Slideshow({ pictures }) {
         alt="carrousel du logement"
         className="slideshow__container__img"
       />
-      <i class="fa-solid fa-chevron-left" onClick={goToPrevious}></i>
-      <i class="fa-solid fa-chevron-right" onClick={goToNext}></i>
+      <i className="fa-solid fa-chevron-left" onClick={goToPrevious}></i>
+      <i className="fa-solid fa-chevron-right" onClick={goToNext}></i>
       <p className='slideshow__container__txt'>{slide + 1}/{pictures.length}</p>
     </div>
   )
