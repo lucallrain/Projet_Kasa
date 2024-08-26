@@ -20,19 +20,19 @@ export default function Card() {
 
   return (
     <div className="cards__container">
-      {accommodationList.map((item) => (
+      {accommodationList.map(({ id, cover, title }) => (
         <Link
           className="cards__container__link"
-          to={`/accommodation/${item.id}`}
-          key={item.id}
+          to={`/accommodation/${id}`}
+          key={id}
         >
           <div className="cards__container__card">
             <img
-              src={item.cover}
-              alt={`Logement: ${item.title}`}
+              src={cover}
+              alt={`Logement: ${title}`}
               className="cards__container__img"
             />
-            <h2 className="cards__container__title">{item.title}</h2>
+            <h3 className="cards__container__title">{title}</h3>
           </div>
         </Link>
       ))}

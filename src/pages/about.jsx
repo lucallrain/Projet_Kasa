@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="about__container">
       <Banner />
-      <div className='about__container--collapse'>
+      <div className='about__container__collapse'>
         <Collapse
           title="Fiabilité"
           description="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrements vérifiées par nos équipes."
