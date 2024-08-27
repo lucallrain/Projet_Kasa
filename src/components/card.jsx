@@ -10,6 +10,9 @@ export default function Card() {
         const response = await fetch('/data.json');
         const data = await response.json();
         setAccommodationList(data);
+
+        // Stocker les données dans localStorage pour une utilisation future
+        localStorage.setItem('accommodationList', JSON.stringify(data));
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
       }
