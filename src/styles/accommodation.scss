@@ -71,12 +71,21 @@
   margin: 50px auto;
   width: 100%;
   max-width: 1240px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   &__info {
     display: flex;
     flex-direction: row;
     gap: 76px;
   }
 }
+
+.accomodation__container__visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 @media screen and (max-width: 800px) {
   .info__container {

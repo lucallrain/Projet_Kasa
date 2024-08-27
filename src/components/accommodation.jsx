@@ -8,6 +8,7 @@ export default function Accomodation() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [error, setError] = useState(false);
+  const [isVisible, setIsVisible] = useState(false); // Ajout d'un état pour gérer la visibilité
 
   useEffect(() => {
     const fetchAccommodationData = () => {
@@ -18,6 +19,7 @@ export default function Accomodation() {
         if (foundItem) {
           setItem(foundItem);
           setError(false);
+          setTimeout(() => setIsVisible(true), 50); // Ajout d'un délai pour l'animation
         } else {
           setError(true);
         }
@@ -35,7 +37,7 @@ export default function Accomodation() {
 
   return (
     item && (
-      <div className="accomodation__container">
+      <div className={`accomodation__container ${isVisible ? 'accomodation__container__visible' : ''}`}>
         <Slideshow pictures={item.pictures} />
         <div className="info__container">
           <div className="info__container__txt">
