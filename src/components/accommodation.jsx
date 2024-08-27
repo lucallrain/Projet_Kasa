@@ -8,7 +8,7 @@ export default function Accomodation() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [error, setError] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); // Ajout d'un état pour gérer la visibilité
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchAccommodationData = () => {
@@ -19,7 +19,7 @@ export default function Accomodation() {
         if (foundItem) {
           setItem(foundItem);
           setError(false);
-          setTimeout(() => setIsVisible(true), 50); // Ajout d'un délai pour l'animation
+          setTimeout(() => setIsVisible(true), 50);
         } else {
           setError(true);
         }
