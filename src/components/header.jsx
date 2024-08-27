@@ -1,31 +1,32 @@
+
 import { Link, useLocation } from 'react-router-dom';
-import HomeLogo from '../assets/home-logo.png';
-import AboutLogo from '../assets/about-logo.png';
 import React from 'react';
 
+function getPageSpecificData(pathname) {
+  const isHomePage = pathname === '/';
+  const isAboutPage = pathname === '/about';
+
+  return {
+    logoImg: isHomePage ? require('../assets/home-logo.png') : require('../assets/about-logo.png'),
+    homeLinkClass: isHomePage ? 'underline' : '',
+    aboutLinkClass: isAboutPage ? 'underline' : '',
+  };
+}
+
 export default function Header() {
-  const location = useLocation();
-  const currentLogo = location.pathname === '/' ? HomeLogo : AboutLogo;
+  const { pathname } = useLocation();
+  const { logoImg, homeLinkClass, aboutLinkClass } = getPageSpecificData(pathname);
+
   return (
     <nav className="navBar">
       <Link to="/">
-        <img src={currentLogo} alt="Logo Kasa" className="navBar__logo" />
+        <img src={logoImg} alt="Logo Kasa" className="navBar__logo" />
       </Link>
       <div className="navBar__routes">
-        <Link
-          className={`navBar__routes__link ${
-            location.pathname === '/' ? 'underline' : ''
-          }`}
-          to="/"
-        >
+        <Link className={`navBar__routes__link ${homeLinkClass}`} to="/">
           Accueil
         </Link>
-        <Link
-          className={`navBar__routes__link ${
-            location.pathname === '/about' ? 'underline' : ''
-          }`}
-          to="/about"
-        >
+        <Link className={`navBar__routes__link ${aboutLinkClass}`} to="/about">
           A propos
         </Link>
       </div>
