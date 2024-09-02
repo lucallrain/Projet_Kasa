@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './card.scss'
 
 export default function Card() {
   const [accommodationList, setAccommodationList] = useState([]);

@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Collapse from './collapse';
-import Slideshow from './slideshow';
-import Error from './error';
+import Collapse from '../collapse/collapse';
+import Slideshow from '../slideshow/slideshow';
+import Error from '../error/error';
+import './accommodation.scss'
 
 export default function Accomodation() {
   const { id } = useParams();

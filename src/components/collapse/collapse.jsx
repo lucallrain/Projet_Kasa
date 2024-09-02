@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import'./collapse.scss'
 
 export default function Collapse({ title, description }) {
   const [isCollapsed, setIsCollapsed] = useState(true)

@@ -1,10 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
-import { headerConfig } from './pageConfig';
-
+import { headerConfig } from '../pageConfig.jsx';
+import'./header.scss'
 export default function Header() {
   const { pathname } = useLocation();
-  const { logoImg, linkClass, title } = headerConfig[pathname] || headerConfig.default;
+  const { logoImg, linkClass} = headerConfig[pathname] || headerConfig.default;
 
   return (
     <nav className="navBar">

@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import React from 'react';
-import { bannerConfig } from './pageConfig';
+import { bannerConfig } from '../pageConfig';
+import './banner.scss'
 
 export default function Banner() {
   const { pathname } = useLocation();

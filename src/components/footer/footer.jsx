@@ -1,4 +1,5 @@
-import FooterLogo from '../assets/footer-logo.png'
+import FooterLogo from '../../assets/footer-logo.png'
+import './footer.scss'
 
 export default function Footer() {
   return (

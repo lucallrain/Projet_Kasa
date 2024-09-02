@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './slideshow.scss'
 
 export default function Slideshow({ pictures }) {
   const [slide, setSlide] = useState(0)

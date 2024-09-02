@@ -1,5 +1,6 @@
-import Error404 from '../assets/404.png'
+import Error404 from '../../assets/404.png'
 import { Link } from 'react-router-dom'
+import './error.scss'
 
 export default function Error() {
   return (
