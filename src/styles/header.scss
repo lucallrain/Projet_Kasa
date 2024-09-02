@@ -6,30 +6,43 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-   &__routes {
+
+  &__routes {
     display: flex;
+
     &__link {
       color: black;
       text-decoration: none;
       margin-left: 50px;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:active {
+        color:#ff6060;
+        text-decoration: underline;
+      }
     }
   }
 }
 
 .underline {
   text-decoration: underline;
+  transition: text-decoration 0.3s ease;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .navBar {
     margin: 20px auto;
+
     &__logo {
       width: 150px;
       height: 50px;
     }
+
     &__routes {
       font-size: 12px;
       text-transform: uppercase;
+
       &__link {
         margin-left: 20px;
       }

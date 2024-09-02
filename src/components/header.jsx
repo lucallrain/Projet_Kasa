@@ -1,21 +1,10 @@
-
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
-
-function getPageSpecificData(pathname) {
-  const isHomePage = pathname === '/';
-  const isAboutPage = pathname === '/about';
-
-  return {
-    logoImg: isHomePage ? require('../assets/home-logo.png') : require('../assets/about-logo.png'),
-    homeLinkClass: isHomePage ? 'underline' : '',
-    aboutLinkClass: isAboutPage ? 'underline' : '',
-  };
-}
+import { headerConfig } from './pageConfig';
 
 export default function Header() {
   const { pathname } = useLocation();
-  const { logoImg, homeLinkClass, aboutLinkClass } = getPageSpecificData(pathname);
+  const { logoImg, linkClass, title } = headerConfig[pathname] || headerConfig.default;
 
   return (
     <nav className="navBar">
@@ -23,11 +12,11 @@ export default function Header() {
         <img src={logoImg} alt="Logo Kasa" className="navBar__logo" />
       </Link>
       <div className="navBar__routes">
-        <Link className={`navBar__routes__link ${homeLinkClass}`} to="/">
+        <Link className={`navBar__routes__link ${pathname === '/' ? linkClass : ''}`} to="/">
           Accueil
         </Link>
-        <Link className={`navBar__routes__link ${aboutLinkClass}`} to="/about">
-          A propos
+        <Link className={`navBar__routes__link ${pathname === '/about' ? linkClass : ''}`} to="/about">
+          À propos
         </Link>
       </div>
     </nav>

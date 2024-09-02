@@ -9,6 +9,7 @@ export default function Accomodation() {
   const [item, setItem] = useState(null);
   const [error, setError] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     const fetchAccommodationData = () => {
@@ -31,6 +32,10 @@ export default function Accomodation() {
     fetchAccommodationData();
   }, [id]);
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   if (error) {
     return <Error />;
   }
@@ -41,20 +46,32 @@ export default function Accomodation() {
         <Slideshow pictures={item.pictures} />
         <div className="info__container">
           <div className="info__container__txt">
-            <h2>{item.title}</h2>
-            <p>{item.location}</p>
-            <div className="info__container__tags">
-              <ul>
-                {item.tags.map((tag, i) => (
-                  <li key={i}>{tag}</li>
-                ))}
-              </ul>
-            </div>
+            {imageError ? (
+              <div className="info__container__fallback">
+                <div className="info__container__fallback__title">titre de la location</div>
+              </div>
+            ) : (
+              <>
+                <h2>{item.title}</h2>
+                <p>{item.location}</p>
+                <div className="info__container__tags">
+                  <ul>
+                    {item.tags.map((tag, i) => (
+                      <li key={i}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
           <div className="info__container__profile">
             <div className="info__container__host">
               <p>{item.host.name}</p>
-              <img src={item.host.picture} alt="hôte" />
+              <img
+                src={item.host.picture}
+                alt="hôte"
+                onError={handleImageError}
+              />
             </div>
             <div className="info__container__rating">
               {[1, 2, 3, 4, 5].map((n) => (
