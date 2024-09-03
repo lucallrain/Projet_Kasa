@@ -1,15 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import HomeLogo from '../../assets/home-logo.png';
-import AboutLogo from '../../assets/about-logo.png';
-import './header.scss'
+import './header.scss';
 
-export default function Header() {
-  const navLinks = [
-    { path: '/', label: 'Acceuil', logo: HomeLogo },
-    { path: '/about', label: 'À propos', logo: AboutLogo },
-  ];
-
+export default function Header({ navLinks, defaultLogo }) {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
 
@@ -18,7 +11,7 @@ export default function Header() {
   }, [location.pathname]);
 
   const currentLink = navLinks.find(link => link.path === location.pathname);
-  const currentLogo = currentLink ? currentLink.logo : navLinks[0].logo;
+  const currentLogo = currentLink ? currentLink.logo : defaultLogo;
 
   return (
     <nav className="navBar">
