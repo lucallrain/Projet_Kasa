@@ -9,7 +9,6 @@ import Error from './components/error/error';
 import Accommodation from './components/accommodation/accommodation';
 import './index.scss';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
@@ -25,4 +24,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Footer />
     </Router>
   </React.StrictMode>,
-)
+);

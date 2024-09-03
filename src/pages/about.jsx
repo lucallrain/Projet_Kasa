@@ -1,10 +1,17 @@
 import Banner from '../components/banner/banner'
 import Collapse from '../components/collapse/collapse'
+import HomeBanner from '../assets/about-banner.png';
 
 export default function About() {
   return (
     <div className="about__container">
-      <Banner />
+      <Banner
+        bannerImg={HomeBanner}
+        bannerClass="banner__home"
+        imgClass="banner__home__img"
+        title=""
+        altText="Bannière avec paysage pour la page d'accueil"
+      />
       <div className='about__container__collapse'>
         <Collapse
           title="Fiabilité"
