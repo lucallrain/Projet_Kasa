@@ -1,0 +1,38 @@
+$primary-color: #ff6060;
+$secondary-color: #e3e3e3;
+
+.error__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &--img {
+    margin: 140px 0;
+  }
+  &__txt {
+    color: $primary-color;
+    font-size: 36px;
+    text-align: center;
+  }
+  &__link {
+    margin: 140px 0;
+    font-size: 18px;
+    color: black;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .error__container {
+    &__img {
+      width: 200px;
+      height: 100px;
+      margin: 110px 0;
+    }
+    &__txt {
+      font-size: 18px;
+    }
+    &__link {
+      font-size: 14px;
+      margin: 110px 0;
+    }
+  }
+}

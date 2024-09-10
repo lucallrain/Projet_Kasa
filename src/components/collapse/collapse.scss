@@ -1,0 +1,59 @@
+$primary-color: #ff6060;
+$secondary-color: #e3e3e3;
+
+.collapse__container {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  border-radius: 10px;
+  margin: 15px auto;
+  overflow: hidden;
+  max-height: 52px;
+  transition: max-height 0.5s linear;
+}
+
+.collapse__container__title {
+  background-color: $primary-color;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  height: 52px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.collapse__container__txt {
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #f6f6f6;
+  padding: 10px 15px;
+}
+
+.fa-chevron-down {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.5s ease;
+  transform: rotate(180deg);
+}
+
+.collapsed {
+  max-height: 52px;
+}
+
+.expanded {
+  max-height: 200px;
+}
+
+.expanded .fa-chevron-down { 
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 800px) {
+  .collapse__container__title {
+    font-size: 13px;
+    min-height: 52px;
+  }
+}

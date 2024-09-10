@@ -1,0 +1,159 @@
+$primary-color: #ff6060;
+$secondary-color: #e3e3e3;
+
+.info__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 0 24px;
+
+  &__txt {
+    h2 {
+      color: $primary-color;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__profile {
+    margin-top: 20px;
+  }
+
+  &__host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      color: $primary-color;
+      max-width: 120px;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  &__tags {
+    margin-left: 0;
+
+    ul {
+      color: white;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding: 0;
+    }
+
+    li {
+      background-color: $primary-color;
+      border-radius: 10px;
+      min-width: 115px;
+      text-align: center;
+      padding: 3px 10px;
+    }
+  }
+}
+
+.filled-star {
+  color: $primary-color;
+}
+
+.empty-star {
+  color: $secondary-color;
+}
+
+.accomodation__container {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 1240px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+  }
+
+  &__visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .info__container {
+    flex-direction: column;
+
+    &__txt {
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    &__tags {
+      font-size: 10px;
+
+      ul {
+        flex-wrap: wrap;
+      }
+    }
+
+    &__rating {
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    &__host {
+      img {
+        height: 32px;
+        width: 32px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .info__container__profile {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .accomodation__container {
+    margin: 20px auto;
+
+    &__info {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+}
